@@ -1,0 +1,30 @@
+name: 推し活速報
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: oshi-watch
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: 新着を確認して投稿
+        run: python3 oshi_watch.py
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          YOUTUBE_WEBHOOK_URL: ${{ secrets.YOUTUBE_WEBHOOK_URL }}
+      - name: 投稿済みの記録を保存
+        run: |
+          git config user.name "oshi-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add seen.json
+          git diff --cached --quiet || (git commit -m "投稿済みの記録を更新" && git push)
