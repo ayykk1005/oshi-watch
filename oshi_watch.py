@@ -21,11 +21,11 @@ from urllib.parse import urljoin, urlparse
 # YouTube: (表示名, チャンネルURL)。@ハンドル でも /channel/UC... でもよい
 YOUTUBE = [
     ("M!LK公式", "https://www.youtube.com/@MILK_2014"),
-    ("M!LK関連", "https://www.youtube.com/channel/UCpfwRncr8S0S3YosR52PX2w"),
-    ("吉田仁人", "https://www.youtube.com/channel/UCk8oGFgksVxjh2YiU_D6hFQ"),
-    ("佐野勇斗", "https://www.youtube.com/@sanohayatodazo"),
-    ("山中柔太朗", "https://www.youtube.com/@jyutaro_the_movie"),
-    ("曽野舜太", "https://www.youtube.com/@Im_SONO_SHUNTA"),
+    ("EBiDAN", "https://www.youtube.com/channel/UCpfwRncr8S0S3YosR52PX2w"),
+    ("じんだいチャンネル", "https://www.youtube.com/channel/UCk8oGFgksVxjh2YiU_D6hFQ"),
+    ("佐野勇斗だぞ", "https://www.youtube.com/@sanohayatodazo"),
+    ("劇場版 じゅうたろう", "https://www.youtube.com/@jyutaro_the_movie"),
+    ("I'm 曽野舜太", "https://www.youtube.com/@Im_SONO_SHUNTA"),
 ]
 
 # 公式サイト: (表示名, 確認するページ, 絞り込み語)。絞り込み語が空なら全件投稿
@@ -42,7 +42,7 @@ NEWS_PATH_WORDS = ["news", "info", "topics", "schedule", "media", "release",
                    "event", "live", "ticket", "goods", "disco", "blog"]
 
 # ⭐ を付ける語（最推し）
-STAR_WORDS = ["吉田仁人", "仁人", "じんと", "JINTO", "Jinto"]
+STAR_WORDS = ["吉田仁人", "仁人", "じんと", "JINTO", "Jinto", "じんだい"]
 
 MAX_POSTS_PER_RUN = 15
 STATE_FILE = "seen.json"
